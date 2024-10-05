@@ -4,26 +4,54 @@
  */
 package proyecto1prueba;
 
+import java.util.Scanner;
+
 /**
  *
  * @author PC
  */
 public class preguntaRespuestaCorta extends pregunta{
     
-String respuesta = ""; //opcion correcta. 0 = falso, 1 = verdadero
+String respuesta = ""; 
 
     
         //constructor
-    public preguntaRespuestaCorta (String Enunciado,int Puntaje,String respuesta) {
+    public preguntaRespuestaCorta (String Enunciado,int Puntaje) {
     super.enunciado = Enunciado;
     super.puntaje = Puntaje;
-    this.respuesta = respuesta;
+    
 
     
     
 
      }             
         
+ @Override  
+    public void ImprimirPregunta() {
+        //hola
+        
+    System.out.println(enunciado + "(" + puntaje + " pts)"); 
+
+    System.out.print("RESPUESTA:"); 
+    
+    
+    }    
+    
+ @Override      
+    public int EntregarRespuesta() {
+        //hola
+        
+        Scanner teclado = new Scanner(System.in);
+        String respuesta = teclado.next();
+
+ 
+        
+
+        System.out.println("espere respuesta del revisor xd"); 
+        System.out.println(""); 
+        return(0);
+
+    }    
     
     
 }

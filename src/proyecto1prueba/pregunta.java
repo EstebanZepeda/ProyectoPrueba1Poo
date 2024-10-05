@@ -30,5 +30,14 @@ public abstract class pregunta {
 
     }  
 
-    
+     
+     //metodo de entrega puntaje
+     public int EntregarPuntaje() {
+        //hola
+        return(puntaje);
+
+    }  
+     
+     
+     
 }

@@ -22,10 +22,35 @@ public class preguntaSeleccionMul extends pregunta {
     String opcionE = "";
     
         //constructor
-    public preguntaSeleccionMul (String Enunciado,int Puntaje,int opcionCorrecta,String OpcionA,String OpcionB,String OpcionC,String OpcionD,String OpcionE) {
+    public preguntaSeleccionMul (String Enunciado,int Puntaje,char opcionCorrecta,String OpcionA,String OpcionB,String OpcionC,String OpcionD,String OpcionE) {
     super.enunciado = Enunciado;
     super.puntaje = Puntaje;
-    this.opcionCorrecta = opcionCorrecta;
+    
+    
+     switch(opcionCorrecta) {
+            case 'a' -> {
+             this.opcionCorrecta = 0; 
+            }
+            case 'b' -> {
+             this.opcionCorrecta = 1;     
+            }
+            case 'c' -> {
+             this.opcionCorrecta = 2;      
+            }
+            case 'd' -> {
+             this.opcionCorrecta = 3;      
+            }
+            case 'e' -> {
+             this.opcionCorrecta = 4;      
+            }
+            default -> {
+            this.opcionCorrecta = 0; //0=a, 1=b, 2=c, 3=d, 4=e     
+            }
+            }
+    
+    
+    
+    
     this.opcionA = OpcionA;
     this.opcionB = OpcionB;
     this.opcionC = OpcionC;
@@ -76,15 +101,32 @@ public class preguntaSeleccionMul extends pregunta {
             case "E" -> {
             respuestaInt = 4;  //WF     
             }
+            case "a" -> {
+            respuestaInt = 0; 
+            }
+            case "b" -> {
+            respuestaInt = 1;  //WF     
+            }
+            case "c" -> {
+            respuestaInt = 2;  //WF     
+            }
+            case "d" -> {
+            respuestaInt = 3;  //WF     
+            }
+            case "e" -> {
+            respuestaInt = 4;  //WF     
+            }
             default -> {
             respuestaInt = 5;  //WF     
             }
             }
         
         if (respuestaInt == this.opcionCorrecta) {
+            System.out.println("correctooooo"); 
             return(this.puntaje); 
+            
             }
-        
+        System.out.println("malo"); 
         return(0);
 
     }  
