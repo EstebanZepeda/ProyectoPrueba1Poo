@@ -103,6 +103,8 @@ public class tester {
      preguntaVerdaderoFalso  preg4 = new preguntaVerdaderoFalso("curly es el gato de fefnanfloo?",2,0); 
      preg4.ImprimirPregunta();   
      preg4.EntregarRespuesta();  
+     
+     Hola esteban estoy probando un nuevo desarollo
      */
      
     }
