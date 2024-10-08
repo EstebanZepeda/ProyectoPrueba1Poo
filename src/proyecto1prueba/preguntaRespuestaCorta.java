@@ -18,11 +18,11 @@ String PalabraClave = "";
 
     
         //constructor
-    public preguntaRespuestaCorta (String Enunciado,int Puntaje, String PalabraClave) {
+    public preguntaRespuestaCorta (String Enunciado,int Puntaje, String Clave) {
     super.enunciado = Enunciado;
     super.puntaje = Puntaje;
     //añadido
-    this.PalabraClave = PalabraClave
+    this.PalabraClave = Clave
 
     
     
@@ -50,11 +50,13 @@ String PalabraClave = "";
         //
         //añadido, cambia a minusculas todo
         this.PalabraClave = this.PalabraClave.toLowerCase();
-        respuesta = respuesta.toLowerCase();
+        respuestaUser = respuestaUser.toLowerCase();
 
-        if (respuesta = PalabraClave) {
+        //equals porque si
+        if (respuestaUser.equals(PalabraClave)) {
 
-            return(this.Puntaje);
+            System.out.println("correcto"); 
+            return(this.puntaje);
             
         }
         //
