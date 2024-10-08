@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
 package proyecto1prueba;
 
+//imports
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -13,14 +15,19 @@ import javax.swing.JFileChooser;
  *
  * @author Esteban
  */
+//clase prueba
 public class prueba {
-    
+
+    //atributos
     int puntajeObtenido = 0;
     int puntajeTotal = 0;
+
+    //si es que implemento lo del respuesta mas corta
     int puntajePorRevisar = 0;
-    //preguntaSeleccionMul preg1 = new preguntaSeleccionMul("",0,0,"","","","","");
     
-    //tipos de preguntas
+
+    
+    //Arrays de tipos de preguntas
     
     preguntaSeleccionMul[] SelecccionArray = new preguntaSeleccionMul[20];
     int SelecccionNum = 0; //numero de preguntas de este tipo, empeieza en 0
@@ -78,7 +85,7 @@ public class prueba {
     public void LeerArchivo() throws FileNotFoundException{
     //la picha del theows es para que tire excepcion si el arcvhico se lo comieron los gatos
     
-    
+    //crea una ventana para elegir el txt desde ahi
     JFileChooser FileChooser = new JFileChooser();
         
          int Response = FileChooser.showOpenDialog(null); //select a file to open}
@@ -87,10 +94,13 @@ public class prueba {
              
              File Archivo = new File(FileChooser.getSelectedFile().getAbsolutePath());
              Scanner scan = new Scanner(Archivo);
-             
+
+             //inicia variables
              int NumPregMul = 0;
              int NumPregVer = 0;
              int NumPregRes = 0;
+
+                //verifica la primera linea para ver que tipo de pregunta es
                 while(scan.hasNextLine()){
                     
                 //primero verifica cual es el tipo de pregunta que viene
@@ -98,10 +108,11 @@ public class prueba {
 
                 
                     switch(opcionPregunta) {
+                            //si es M es seleccion multiple
                         case "M" -> {
                          System.out.println("MULTIPLE");
                          
-                         
+                         //guarda cada linea en variable correspondiente
                          String enunciado = scan.nextLine();
                          String puntajeStr = scan.nextLine();
                          int puntaje = Integer.parseInt(puntajeStr);
@@ -114,7 +125,8 @@ public class prueba {
                          String EnunB = scan.nextLine();
                          String EnunC = scan.nextLine();
                          String EnunD = scan.nextLine();
-                         String EnunE = scan.nextLine();        
+                         String EnunE = scan.nextLine(); 
+                            //crea la pregunta con los parametros recolectados de archivo
                          SelecccionArray[NumPregMul] = new preguntaSeleccionMul(enunciado,puntaje,letraCorrecta,EnunA,EnunB,EnunC,EnunD,EnunE);
                          System.out.println(NumPregMul);
                          NumPregMul = NumPregMul+1;
