@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author PC
+ * @author Esteban
  */
 public class preguntaRespuestaCorta extends pregunta{
     
@@ -47,10 +47,19 @@ String PalabraClave = "";
         Scanner teclado = new Scanner(System.in);
         String respuesta = teclado.next();
 
- 
-        
+        //
+        //añadido, cambia a minusculas todo
+        this.PalabraClave = this.PalabraClave.toLowerCase();
+        respuesta = respuesta.toLowerCase();
+
+        if (respuesta = PalabraClave) {
+
+            return(this.Puntaje);
+            
+        }
+        //
         //aqui en vez de eso que revise y compare la respuesta con la palabra clave
-        System.out.println("espere respuesta del revisor xd"); 
+        System.out.println("malo feo"); 
         System.out.println(""); 
         return(0);
 
