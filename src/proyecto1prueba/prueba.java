@@ -153,8 +153,10 @@ public class prueba {
                          String enunciado = scan.nextLine();
                          String puntajeStr = scan.nextLine();
                          int puntaje = Integer.parseInt(puntajeStr);
-                         
-                         CortaArray[NumPregRes] = new preguntaRespuestaCorta(enunciado,puntaje);
+                            //añadido
+                         String clave = scan.nextLine();  
+                         //añadido clave (palabra clave)
+                         CortaArray[NumPregRes] = new preguntaRespuestaCorta(enunciado,puntaje,clave);
                          System.out.println(NumPregRes);
                          NumPregRes = NumPregRes+1;
                          
@@ -200,13 +202,14 @@ public class prueba {
      i = i +1;
 
      }
-     
+
+
+        //MODIFICADO quitado el por revisar
      i = 0; 
      while (i < this.CortaNum)  {
      this.CortaArray[i].ImprimirPregunta();
      this.puntajeObtenido=this.puntajeObtenido + CortaArray[i].EntregarRespuesta();
      this.puntajeTotal = this.puntajeTotal + CortaArray[i].EntregarPuntaje();
-     this.puntajePorRevisar = this.puntajePorRevisar + CortaArray[i].EntregarPuntaje();
      i = i +1;
 
      }
@@ -217,7 +220,7 @@ public class prueba {
      //RESOLUCION
      System.out.println("");
      System.out.println("Puntaje obtenido:" + this.puntajeObtenido);
-     System.out.println("Puntaje por revisar:" + this.puntajePorRevisar);
+     //COMENTADO ESO: System.out.println("Puntaje por revisar:" + this.puntajePorRevisar);
      System.out.println("Puntaje Total:" + this.puntajeTotal);
 
     }
