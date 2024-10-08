@@ -12,14 +12,17 @@ import java.util.Scanner;
  */
 public class preguntaRespuestaCorta extends pregunta{
     
-String respuesta = ""; 
+String respuesta = "";
+    //añadido para que reconozca palabra clave
+String PalabraClave = "";    
 
     
         //constructor
-    public preguntaRespuestaCorta (String Enunciado,int Puntaje) {
+    public preguntaRespuestaCorta (String Enunciado,int Puntaje, String PalabraClave) {
     super.enunciado = Enunciado;
     super.puntaje = Puntaje;
-    
+    //añadido
+    this.PalabraClave = PalabraClave
 
     
     
@@ -46,7 +49,7 @@ String respuesta = "";
 
  
         
-
+        //aqui en vez de eso que revise y compare la respuesta con la palabra clave
         System.out.println("espere respuesta del revisor xd"); 
         System.out.println(""); 
         return(0);
