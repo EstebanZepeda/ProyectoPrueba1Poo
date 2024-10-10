@@ -12,20 +12,17 @@ import java.util.Scanner;
  */
 public class preguntaRespuestaCorta extends pregunta{
     
-String respuesta = "";
     //añadido para que reconozca palabra clave
-String PalabraClave = "";    
+String palabraClave = "";
+String respuestaUser = "";
 
     
         //constructor
-    public preguntaRespuestaCorta (String Enunciado,int Puntaje, String Clave) {
+    public preguntaRespuestaCorta (String Enunciado, int Puntaje, String palabraClave) {
     super.enunciado = Enunciado;
     super.puntaje = Puntaje;
-    //añadido
-    this.PalabraClave = Clave
-
-    
-    
+    this.palabraClave = palabraClave;
+    this.respuestaUser = respuestaUser;
 
      }             
         
@@ -34,7 +31,6 @@ String PalabraClave = "";
         //hola
         
     System.out.println(enunciado + "(" + puntaje + " pts)"); 
-
     System.out.print("RESPUESTA:"); 
     
     
@@ -42,24 +38,22 @@ String PalabraClave = "";
     
  @Override      
     public int EntregarRespuesta() {
-        //hola
         
         Scanner teclado = new Scanner(System.in);
-        String respuesta = teclado.next();
+        String respuestaUser = teclado.next(); 
 
-        //
         //añadido, cambia a minusculas todo
-        this.PalabraClave = this.PalabraClave.toLowerCase();
+        this.palabraClave = this.palabraClave.toLowerCase();
         respuestaUser = respuestaUser.toLowerCase();
 
         //equals porque si
-        if (respuestaUser.equals(PalabraClave)) {
+        if (respuestaUser.equals(palabraClave)) {
 
             System.out.println("correcto"); 
             return(this.puntaje);
             
         }
-        //
+        
         //aqui en vez de eso que revise y compare la respuesta con la palabra clave
         System.out.println("malo feo"); 
         System.out.println(""); 

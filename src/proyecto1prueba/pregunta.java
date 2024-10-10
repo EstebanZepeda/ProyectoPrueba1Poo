@@ -18,14 +18,14 @@ public abstract class pregunta {
 
 //metodo    
     public void ImprimirPregunta() {
-        //hola
+        
 
     }
 
 //metodo    
     
      public int EntregarRespuesta() {
-        //hola
+        
         return(0);
 
     }  
@@ -33,7 +33,7 @@ public abstract class pregunta {
      
      //metodo de entrega puntaje
      public int EntregarPuntaje() {
-        //hola
+        
         return(puntaje);
 
     }  

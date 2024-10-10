@@ -4,10 +4,6 @@
  */
 package proyecto1prueba;
 
-import java.io.FileNotFoundException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author Esteban
@@ -54,14 +50,10 @@ public class tester {
      
     prueba prueba1 = new prueba();
      
-     //try sidoso siempre sale
-        try {
-            prueba1.LeerArchivo();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(tester.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        //try sidoso siempre sale
+        prueba1.LeerArchivo();
      
-    prueba1.responderPrueba();    
+        prueba1.responderPrueba();    
         
         
      //seleccion multiplie

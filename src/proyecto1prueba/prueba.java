@@ -42,12 +42,10 @@ public class prueba {
     
     //constructor
     public prueba () {
-
     puntajeObtenido = 0;
     puntajeTotal = 0; 
     puntajePorRevisar = 0;
     
-
      }   
     
     
@@ -82,17 +80,19 @@ public class prueba {
     }
     
     
-    public void LeerArchivo() throws FileNotFoundException{
-    //la picha del theows es para que tire excepcion si el arcvhico se lo comieron los gatos
+    public void LeerArchivo(){
     
-    //crea una ventana para elegir el txt desde ahi
+    System.out.println("HOLA TEST");
     JFileChooser FileChooser = new JFileChooser();
         
+    
          int Response = FileChooser.showOpenDialog(null); //select a file to open}
          if (Response==JFileChooser.APPROVE_OPTION) { //si se abrio bien
              
-             
+             try{
              File Archivo = new File(FileChooser.getSelectedFile().getAbsolutePath());
+             
+             
              Scanner scan = new Scanner(Archivo);
 
              //inicia variables
@@ -161,20 +161,23 @@ public class prueba {
                          NumPregRes = NumPregRes+1;
                          
                         }
-                        default -> {
-                        System.out.println("arvhico fallido autodestruccion");
-                        }
-                        }  
+                        
+                    }  
                 
                  this.SelecccionNum = NumPregMul;
                  this.CortaNum = NumPregRes;
                  this.VerdaderoFalsoNum = NumPregVer;
                 
-                }
-             }
-
-    
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Archivo no encontrado o corrupto");
+        } catch (NumberFormatException e) {
+            System.out.println("Archivo del tipo incorrecto: formato numérico inválido");
+        } catch (Exception e) {
+            System.out.println("Error en el procesamiento del archivo");
+        }
     }
+}
     
     
     

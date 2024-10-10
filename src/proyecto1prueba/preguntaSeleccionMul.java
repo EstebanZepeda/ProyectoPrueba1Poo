@@ -25,6 +25,13 @@ public class preguntaSeleccionMul extends pregunta {
     public preguntaSeleccionMul (String Enunciado,int Puntaje,char opcionCorrecta,String OpcionA,String OpcionB,String OpcionC,String OpcionD,String OpcionE) {
     super.enunciado = Enunciado;
     super.puntaje = Puntaje;
+    this.opcionA = OpcionA;
+    this.opcionB = OpcionB;
+    this.opcionC = OpcionC;
+    this.opcionD = OpcionD;
+    this.opcionE = OpcionE;
+    
+    
     
     
      switch(opcionCorrecta) {
@@ -47,15 +54,6 @@ public class preguntaSeleccionMul extends pregunta {
             this.opcionCorrecta = 0; //0=a, 1=b, 2=c, 3=d, 4=e     
             }
             }
-    
-    
-    
-    
-    this.opcionA = OpcionA;
-    this.opcionB = OpcionB;
-    this.opcionC = OpcionC;
-    this.opcionD = OpcionD;
-    this.opcionE = OpcionE;
     
     
 
@@ -122,11 +120,11 @@ public class preguntaSeleccionMul extends pregunta {
             }
         
         if (respuestaInt == this.opcionCorrecta) {
-            System.out.println("correctooooo"); 
+            System.out.println("CORRECTO"); 
             return(this.puntaje); 
             
             }
-        System.out.println("malo"); 
+        System.out.println("INCORRECTO"); 
         return(0);
 
     }  

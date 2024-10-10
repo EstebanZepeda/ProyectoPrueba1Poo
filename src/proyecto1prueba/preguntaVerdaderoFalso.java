@@ -39,8 +39,7 @@ int opcionCorrecta = 0; //opcion correcta. 0 = falso, 1 = verdadero
     
  @Override  
     public void ImprimirPregunta() {
-        //hola
-        
+   
     System.out.println(enunciado + " V/F (" + puntaje + " pts)"); 
     System.out.println(""); 
     
@@ -49,7 +48,6 @@ int opcionCorrecta = 0; //opcion correcta. 0 = falso, 1 = verdadero
   
 @Override      
     public int EntregarRespuesta() {
-        //hola
         
         Scanner teclado = new Scanner(System.in);
         String respuesta = teclado.next();
@@ -76,11 +74,11 @@ int opcionCorrecta = 0; //opcion correcta. 0 = falso, 1 = verdadero
             }
         
         if (respuestaInt == this.opcionCorrecta) {
-            System.out.println("correctooooo"); 
+            System.out.println("CORRECTO"); 
             return(this.puntaje); 
             
             }
-        System.out.println("malo"); 
+        System.out.println("INCORRECTO"); 
         return(0);
 
     }      
