@@ -48,7 +48,7 @@ public class tester {
  
      
      
-    prueba prueba1 = new prueba();
+    prueba prueba1 = new prueba(0,0,0); //obtenido, total, porRevisar
      
         //try sidoso siempre sale
         prueba1.LeerArchivo();
