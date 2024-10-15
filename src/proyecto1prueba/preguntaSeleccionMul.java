@@ -77,53 +77,82 @@ public class preguntaSeleccionMul extends pregunta {
     
     }    
 
+    
 @Override      
     public int EntregarRespuesta() {
         //hola
         
-        Scanner teclado = new Scanner(System.in);
-        String respuesta = teclado.next();
-        int respuestaInt;
-        
-        switch(respuesta) {
-            case "A" -> {
-            respuestaInt = 0; 
-            }
-            case "B" -> {
-            respuestaInt = 1;  //WF     
-            }
-            case "C" -> {
-            respuestaInt = 2;  //WF     
-            }
-            case "D" -> {
-            respuestaInt = 3;  //WF     
-            }
-            case "E" -> {
-            respuestaInt = 4;  //WF     
-            }
-            case "a" -> {
-            respuestaInt = 0; 
-            }
-            case "b" -> {
-            respuestaInt = 1;  //WF     
-            }
-            case "c" -> {
-            respuestaInt = 2;  //WF     
-            }
-            case "d" -> {
-            respuestaInt = 3;  //WF     
-            }
-            case "e" -> {
-            respuestaInt = 4;  //WF     
-            }
-            default -> {
-            respuestaInt = 5;  //WF     
-            }
-            }
+        int intentos = 3;
+        int respuestaInt = 0;
+        while(intentos > 0) {
+        //well well well
+         
+
+            Scanner teclado = new Scanner(System.in);
+
+
+
+            String respuesta = teclado.next();
+
+
+            switch(respuesta) {
+                    case "A" -> {
+                    respuestaInt = 0; 
+                    intentos = -1;
+                    }
+                    case "B" -> {
+                    respuestaInt = 1;  //WF     
+                    intentos = -1;
+                    }
+                    case "C" -> {
+                    respuestaInt = 2;  //WF     
+                    }
+                    case "D" -> {
+                    respuestaInt = 3;  //WF 
+                    intentos = -1;
+                    }
+                    case "E" -> {
+                    respuestaInt = 4;  //WF   
+                    intentos = -1;
+                    }
+                    case "a" -> {
+                    respuestaInt = 0;
+                    intentos = -1;
+                    }
+                    case "b" -> {
+                    respuestaInt = 1;  //WF  
+                    intentos = -1;
+                    }
+                    case "c" -> {
+                    respuestaInt = 2;  //WF    
+                    intentos = -1;
+                    }
+                    case "d" -> {
+                    respuestaInt = 3;  //WF   
+                    intentos = -1;
+                    }
+                    case "e" -> {
+                    respuestaInt = 4;  //WF   
+                    intentos = -1;
+                    }
+                    default -> {
+                    respuestaInt = 5;  //WF     
+                    intentos = intentos-1;
+                    System.out.println("respuesta invalida intente denuevo");
+                    }
+                }
+
+        }
         
         if (respuestaInt == this.opcionCorrecta) {
             System.out.println("correctooooo"); 
             return(this.puntaje); 
+            
+            }
+        if (intentos == 0)
+            {
+            System.out.println("muchos intentos"); 
+
             
             }
         System.out.println("malo"); 
