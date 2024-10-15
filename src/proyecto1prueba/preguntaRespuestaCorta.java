@@ -45,7 +45,7 @@ String PalabraClave = "";
         //hola
         
         Scanner teclado = new Scanner(System.in);
-        String respuesta = teclado.next();
+        String respuestaUser = teclado.next();
 
         //
         //añadido, cambia a minusculas todo
