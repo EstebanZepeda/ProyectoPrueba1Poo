@@ -1,0 +1,20 @@
+Resultados de la Prueba:
+Puntaje obtenido: 18
+Puntaje total: 18
+
+Pregunta Selección Múltiple: Miguel Ramos de que se titulo?
+Respuesta del usuario: e
+Puntaje: 2
+
+Pregunta Selección Múltiple: Complete la frase "emiliano vete al ______!"
+Respuesta del usuario: a
+Puntaje: 4
+
+Pregunta Verdadero/Falso: Eric Jeltsch siempre fue bueno
+Respuesta del usuario: f
+Puntaje: 4
+
+Pregunta Respuesta Corta: Quien es el mejor amigo de BigPoppa?
+Respuesta del usuario: diosito
+Puntaje: 8
+

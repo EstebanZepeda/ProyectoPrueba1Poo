@@ -48,13 +48,13 @@ public class tester {
  
      
      
-    prueba prueba1 = new prueba(0,0,0); //obtenido, total, porRevisar
+        prueba prueba1 = new prueba(0,0,0); //obtenido, total, porRevisar
      
         //try sidoso siempre sale
         prueba1.LeerArchivo();
      
         prueba1.responderPrueba();    
-        
+        prueba1.guardarResultados("resultados.txt");
         
      //seleccion multiplie
      //preguntaSeleccionMul preg1 = new preguntaSeleccionMul("Cuantas unidades es capaz de subir mario con un rollout en un Misaligment?",2,'c',"230","157","207","198","depende");

@@ -11,10 +11,10 @@ import java.util.Scanner;
  * @author Esteban
  */
 public class preguntaRespuestaCorta extends pregunta{
-    
+     
     //añadido para que reconozca palabra clave
 String palabraClave = "";
-String respuestaUser = "";
+String respuestaUsuario = ""; //revisar
 
     
         //constructor
@@ -22,11 +22,11 @@ String respuestaUser = "";
     super.enunciado = Enunciado;
     super.puntaje = Puntaje;
     this.palabraClave = palabraClave;
-    this.respuestaUser = respuestaUser;
+    this.respuestaUsuario = respuestaUsuario; //revisar
 
-     }             
-        
- @Override  
+     } 
+       
+  @Override  
     public void ImprimirPregunta() {
         //hola
         
@@ -40,26 +40,38 @@ String respuestaUser = "";
     public int EntregarRespuesta() {
         
         Scanner teclado = new Scanner(System.in);
-        String respuestaUser = teclado.next(); 
+        respuestaUsuario = teclado.next(); 
 
         //añadido, cambia a minusculas todo
-        this.palabraClave = this.palabraClave.toLowerCase();
-        respuestaUser = respuestaUser.toLowerCase();
+        palabraClave = palabraClave.toLowerCase();
+        respuestaUsuario = respuestaUsuario.toLowerCase();
 
         //equals porque si
-        if (respuestaUser.equals(palabraClave)) {
+        if (respuestaUsuario.equals(palabraClave)) {
 
-            System.out.println("correcto"); 
-            return(this.puntaje);
+            System.out.println("correcto");
+            System.out.println("");
+            return(puntaje);
             
-        }
+        }else{
         
         //aqui en vez de eso que revise y compare la respuesta con la palabra clave
-        System.out.println("malo feo"); 
+        System.out.println("incorrecto"); 
         System.out.println(""); 
         return(0);
-
-    }    
+        }
+    }
     
+
+    @Override
+    public String getEnunciado() {
+        return enunciado; // retorna el enunciado de la pregunta
+    }
+    
+
+    public String getRespuestaUsuario() {
+        return respuestaUsuario; // devuelve la respuesta del usuario
+    }
+
     
 }

@@ -11,6 +11,7 @@ package proyecto1prueba;
 public abstract class pregunta {
     
     String enunciado; //enunciado de la pregunta
+    String respuestaUsuario;
     boolean correcto; //0 = incorrecto, 1 = correcto
     int puntaje; // cuanto vale la pregunta, se multiplica por el correcto    
     
@@ -36,8 +37,11 @@ public abstract class pregunta {
         
         return(puntaje);
 
-    }  
+    }
      
-     
-     
+    public String getEnunciado() {
+        return enunciado;
+    }
+    
+   
 }
