@@ -225,6 +225,52 @@ public class prueba {
 
     }
 
+
+    //metodood guarda archivio
+    public void guardarResultados(String nombreArchivo) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(nombreArchivo))) {
+            writer.println("Resultados de la Prueba:");
+            writer.println("Puntaje obtenido: " + puntajeObtenido);
+            writer.println("Puntaje total: " + puntajeTotal);
+            writer.println();
+
+            //guarda las multiples formato
+            for (int i = 0; i < SelecccionNum; i++) {
+                writer.println("Pregunta Selección Múltiple: " + SelecccionArray[i].getEnunciado());
+                writer.println("Respuesta del usuario: " + SelecccionArray[i].getRespuestaUser());
+                writer.println("Puntaje: " + SelecccionArray[i].EntregarPuntaje());
+                writer.println();
+            }
+
+            //guarda v/f formato
+            for (int i = 0; i < VerdaderoFalsoNum; i++) {
+                writer.println("Pregunta Verdadero/Falso: " + VerdaderoFalsoArray[i].getEnunciado());
+                writer.println("Respuesta del usuario: " + VerdaderoFalsoArray[i].getRespuestaUser());
+                writer.println("Puntaje: " + VerdaderoFalsoArray[i].EntregarPuntaje());
+                writer.println();
+            }
+
+            //guarda rcorta fortmato
+            for (int i = 0; i < CortaNum; i++) {
+                writer.println("Pregunta Respuesta Corta: " + CortaArray[i].getEnunciado());
+                writer.println("Respuesta del usuario: " + CortaArray[i].getRespuestaUser());
+                writer.println("Puntaje: " + CortaArray[i].EntregarPuntaje());
+                writer.println();
+            }
+
+            System.out.println("Resultados guardados en " + nombreArchivo);
+        } catch (IOException e) {
+            System.out.println("Error al guardar resultados: " + e.getMessage()); //exepcion
+        }
+    }
+
+
+
+
+
+
+
+    
  
     
 }
